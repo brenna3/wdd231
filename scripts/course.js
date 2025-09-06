@@ -1,29 +1,30 @@
 const courses = [
-  { code: "WDD 130", credits: 2, completed: true },
-  { code: "WDD 131", credits: 2, completed: true },
-  { code: "WDD 231", credits: 2, completed: false },
-  { code: "CSE 121b", credits: 2, completed: false },
+  { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
+  { code: "WDD 131", name: "Dynamic Web Fundamentals", credits: 3, completed: true },
+  { code: "WDD 231", name: "Front-End Development", credits: 3, completed: false }
 ];
 
-const courseContainer = document.getElementById("courses");
-const creditDisplay = document.getElementById("totalCredits");
+function displayCourses(filter) {
+  const list = document.getElementById("course-list");
+  list.innerHTML = "";
 
-function renderCourses(list) {
-  courseContainer.innerHTML = "";
-  let total = 0;
-  list.forEach(course => {
+  let filtered = filter === "all" ? courses : courses.filter(c => c.code.startsWith(filter.toUpperCase()));
+
+  let totalCredits = 0;
+
+  filtered.forEach(course => {
     const div = document.createElement("div");
-    div.className = "courseCard";
-    if (course.completed) div.classList.add("completed");
     div.textContent = `${course.code}`;
-    courseContainer.appendChild(div);
-    total += course.credits;
+    div.className = course.completed ? "completed" : "incomplete";
+    list.appendChild(div);
+    totalCredits += course.credits;
   });
-  creditDisplay.textContent = total;
+
+  document.getElementById("total-credits").textContent = `The total credits for course listed above is ${totalCredits}`;
 }
 
-document.getElementById("all").addEventListener("click", () => renderCourses(courses));
-document.getElementById("cse").addEventListener("click", () => renderCourses(courses.filter(c => c.code.startsWith("CSE"))));
-document.getElementById("wdd").addEventListener("click", () => renderCourses(courses.filter(c => c.code.startsWith("WDD"))));
+document.getElementById("all").addEventListener("click", () => displayCourses("all"));
+document.getElementById("cse").addEventListener("click", () => displayCourses("CSE"));
+document.getElementById("wdd").addEventListener("click", () => displayCourses("WDD"));
 
-renderCourses(courses);
+window.addEventListener("DOMContentLoaded", () => displayCourses("all"));
