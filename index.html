@@ -1,68 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WDD 231 Course Homepage" />
-  <meta name="author" content="Brenna Nery" />
-  <title>Brenna Nery | WDD 231</title>
-
-  <link rel="stylesheet" href="styles/normalize.css" />
-  <link rel="stylesheet" href="styles/small.css" />
-  <link rel="stylesheet" href="styles/larger.css" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <!-- JS Scripts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Course homepage for WDD231">
+  <meta name="author" content="Your Name">
+  <title>Home | WDD231</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
   <script src="scripts/navigation.js" defer></script>
   <script src="scripts/date.js" defer></script>
   <script src="scripts/course.js" defer></script>
 </head>
-
 <body>
   <header>
     <img src="images/logo.svg" alt="Site Logo">
-    <span>Brenna Nery</span>
-    <button id="menuBtn" aria-label="Menu">&#9776;</button>
+    <span>Site Name</span>
+    <button id="menu-button">☰</button>
   </header>
 
-  <nav id="mainNav">
-    <a href="#">Home</a>
-    <a href="chamber/">Chamber</a>
-    <a href="final/">Final</a>
+  <nav id="main-nav" class="hidden">
+    <a href="index.html">Home</a>
+    <a href="#">Chamber Project</a>
+    <a href="#">Final Project</a>
   </nav>
 
   <main>
     <h1>Home</h1>
-    <section>
+    <section class="about">
       <h2>About Me</h2>
-      <hi! My name is Brenna Nery. I am a 22 year old that lives in Tri-Cities, WA. I have 2 boys who are 5, and 18months. My hobbys include working out, reading, shopping, and cooking new food. I am currently an IT Product Manager at Christensen Inc. while also pursuing content creation on Tiktok and Instagram. My life is busy and crazy, but I would not trade it for the world!>
+      <p>hi! My name is Brenna Nery. I am a 22 year old that lives in Tri-Cities, WA. I have 2 boys who are 5, and 18months. My hobbys include working out, reading, shopping, and cooking new food. I am currently an IT Product Manager at Christensen Inc. while also pursuing content creation on Tiktok and Instagram. My life is busy and crazy, but I would not trade it for the world!
+    </p>
     </section>
-    <section>
-      <h2>Certificate Courses</h2>
-      <div id="courseButtons">
+
+    <section class="photo">
+      <h2>Student Photo</h2>
+      <img src="images/placeholder.png" alt="Student Photo">
+    </section>
+
+    <section class="courses">
+      <h2>Web Certificate Courses</h2>
+      <div class="filters">
         <button id="all">All</button>
-        <button id="wdd">WDD</button>
         <button id="cse">CSE</button>
+        <button id="wdd">WDD</button>
       </div>
-      <div id="courses"></div>
-      <p>Total Credits: <span id="totalCredits">0</span></p>
-    </section>
-    <section>
-      <h2>Other Info</h2>
-      <!-- Other content -->
+      <div id="course-list"></div>
+      <p id="total-credits"></p>
     </section>
   </main>
 
   <footer>
-    <div>
-      <a href="https://github.com/brenna3" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">LinkedIn</a>
-      <a href="https://github.com/brenna3" target="_blank">Instagram</a>
-      <a href="https://www.instagram.com/tricities.gowns/" target="_blank">Facebook</a>
+    <div class="social-icons">
+      <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+      <a href="#"><img src="images/github.svg" alt="GitHub"></a>
     </div>
-    <p>&copy; <span id="year"></span> Brenna Nery | Washington</p>
+    <p>&copy; <span id="year"></span> • Your Name • Utah, USA</p>
     <p id="lastModified"></p>
   </footer>
 </body>
