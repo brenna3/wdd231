@@ -10,7 +10,8 @@
     gap: 1rem;
   }
 
-  .about, .photo {
+  .about,
+  .student-photo {
     grid-column: span 1;
   }
 
@@ -18,11 +19,8 @@
     grid-column: span 2;
   }
 
-  .filters {
-    justify-content: center;
-  }
-
-  footer {
-    margin-top: 2rem;
+  header .site-name {
+    margin-left: 1rem;
+    font-size: 1.25rem;
   }
 }
