@@ -1,4 +1,4 @@
-/* Reset and basic styling */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,16 +6,16 @@
 }
 
 body {
-  background-color: #e7f0f7; /* very light pastel blue */
+  background-color: #e7f0f7; 
   font-family: 'Roboto', sans-serif;
-  color: #334e68; /* dark blue-gray text */
+  color: #334e68; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-/* HEADER */
+
 header {
   display: flex;
   align-items: center;
@@ -31,12 +31,12 @@ header img {
 header span {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #335c67; /* pastel dark blue */
+  color: #335c67; 
 }
 
-/* NAVIGATION */
+
 nav.navigation {
-  background-color: #a3cef1; /* pastel blue */
+  background-color: #a3cef1; 
   display: flex;
   gap: 1rem;
   padding: 0.5rem 1rem;
@@ -55,11 +55,11 @@ nav.navigation a {
 
 nav.navigation a.active,
 nav.navigation a:hover {
-  background-color: #7ab8f5; /* lighter pastel blue */
+  background-color: #7ab8f5; 
   color: #1f3a5f;
 }
 
-/* MAIN CONTENT - stacked vertically on small screens */
+
 main {
   flex-grow: 1;
   margin-top: 1.5rem;
@@ -68,11 +68,11 @@ main {
   gap: 1rem;
 }
 
-/* Section styles */
+
 section.about-me,
 section.student-photo,
 section.web-courses {
-  background-color: #f0f4f8; /* very light pastel */
+  background-color: #f0f4f8; 
   padding: 1rem;
   border-radius: 8px;
   color: #334e68;
@@ -80,7 +80,7 @@ section.web-courses {
 
 section.about-me h2,
 section.web-courses h2 {
-  background-color: #a3cef1; /* pastel blue bar */
+  background-color: #a3cef1; 
   padding: 0.25rem 0.5rem;
   margin-bottom: 0.75rem;
   font-weight: bold;
@@ -89,14 +89,14 @@ section.web-courses h2 {
   color: #1f3a5f;
 }
 
-/* STUDENT PHOTO heading - no background bar, just spacing */
+
 section.student-photo h2 {
   margin-bottom: 0.75rem;
   font-weight: bold;
   color: #1f3a5f;
 }
 
-/* Student photo */
+
 section.student-photo img {
   width: 100%;
   max-width: 300px;
@@ -107,7 +107,7 @@ section.student-photo img {
   box-shadow: 0 4px 8px rgba(51, 78, 104, 0.15);
 }
 
-/* Filters */
+
 .filters {
   display: flex;
   flex-direction: column;
@@ -132,7 +132,7 @@ section.student-photo img {
   outline: none;
 }
 
-/* Course container grid for small screens */
+
 #courseContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -140,7 +140,7 @@ section.student-photo img {
   color: #334e68;
 }
 
-/* Credits */
+
 .credits {
   margin-top: 1rem;
   font-weight: bold;
@@ -148,7 +148,7 @@ section.student-photo img {
   color: #335c67;
 }
 
-/* FOOTER */
+
 footer {
   background-color: #a3cef1;
   color: #1f3a5f;

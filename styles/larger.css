@@ -8,7 +8,7 @@
     height: 60px;
   }
 
-  /* MAIN - Grid layout for desktop */
+
   main {
     display: grid;
     grid-template-columns: 2fr 1fr;
