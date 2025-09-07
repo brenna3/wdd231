@@ -2,7 +2,7 @@ const courses = [
   { code: "WDD 130", name: "Web Fundamentals", credits: 1, completed: true },
   { code: "WDD 131", name: "Dynamic Web", credits: 2, completed: true },
   { code: "WDD 231", name: "Frontend Dev I", credits: 3, completed: false },
-  { code: "CSE 121b", name: "JavaScript Language", credits: 2, completed: false },
+  { code: "CSE 120", name: "Programming with classes", credits: 2, completed: false },
 ];
 
 function renderCourses(filteredCourses) {
@@ -40,4 +40,16 @@ function filterCourses(type) {
 
 window.addEventListener("DOMContentLoaded", () => {
   renderCourses(courses);
+
+  const filterButtons = document.querySelectorAll(".filters button");
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filterType = button.getAttribute("data-filter");
+      filterCourses(filterType);
+
+      // Update active button styling
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
 });
