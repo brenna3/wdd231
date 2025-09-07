@@ -1,50 +1,41 @@
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
+  padding: 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: #222;
-  color: #fff;
-}
-
-header .logo {
-  width: 40px;
-  height: auto;
-}
-
-header .site-name {
-  flex-grow: 1;
-  margin-left: 0.5rem;
-}
-
-#menuBtn {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #fff;
-}
-
-nav.hidden {
-  display: none;
-}
-
-nav {
   background: #333;
-  display: flex;
-  flex-direction: column;
+  color: white;
+  padding: 1rem;
 }
 
-nav a {
+#navMenu {
+  display: none;
+  flex-direction: column;
+  background-color: #444;
+  width: 100%;
+}
+
+#navMenu a {
+  color: white;
   padding: 1rem;
-  color: #fff;
   text-decoration: none;
-  border-top: 1px solid #444;
+  border-top: 1px solid #666;
+}
+
+#navMenu a:hover {
+  background-color: #555;
+}
+
+#menuToggle {
+  background: #eee;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.5rem;
 }
 
 main {
@@ -52,49 +43,14 @@ main {
 }
 
 section {
-  margin-bottom: 1rem;
-}
-
-.student-photo img {
-  width: 100%;
-  max-width: 300px;
-  display: block;
-  margin: 0.5rem auto;
-}
-
-.filters {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-button {
-  flex: 1;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.course-card {
-  background: #ddd;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.course-card.completed {
-  background: #a0d995;
+  margin-bottom: 2rem;
+  background: #eee;
+  padding: 1rem;
 }
 
 footer {
+  background: #333;
+  color: white;
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
-  background: #222;
-  color: #fff;
-}
-
-.social-links a {
-  margin: 0 0.5rem;
-  color: #fff;
-  text-decoration: none;
 }

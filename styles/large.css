@@ -1,26 +1,26 @@
-@media screen and (min-width: 768px) {
-  nav {
+@media (min-width: 768px) {
+  #navMenu {
+    display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 1rem;
+  }
+
+  #menuToggle {
+    display: none;
   }
 
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 1rem;
   }
 
-  .about,
-  .student-photo {
+  section {
     grid-column: span 1;
   }
 
-  .courses {
+  section.courses {
     grid-column: span 2;
-  }
-
-  header .site-name {
-    margin-left: 1rem;
-    font-size: 1.25rem;
   }
 }

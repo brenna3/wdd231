@@ -1,6 +1,4 @@
-const menuButton = document.getElementById('menu-button');
-const nav = document.getElementById('main-nav');
-
-menuButton.addEventListener('click', () => {
-  nav.classList.toggle('hidden');
+document.getElementById('menuToggle').addEventListener('click', () => {
+  const menu = document.getElementById('navMenu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 });

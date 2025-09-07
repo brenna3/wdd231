@@ -1,30 +1,34 @@
 const courses = [
-  { code: "WDD 130", credits: 3, completed: true },
-  { code: "WDD 131", credits: 3, completed: true },
-  { code: "WDD 231", credits: 3, completed: false },
+  { code: "WDD 130", name: "Web Fundamentals", credits: 3, completed: true },
+  { code: "WDD 131", name: "Dynamic Web", credits: 3, completed: true },
+  { code: "WDD 231", name: "Front-End Dev", credits: 3, completed: false },
+  { code: "CSE 121b", name: "JavaScript Language", credits: 3, completed: false }
 ];
 
-const courseList = document.getElementById('courseList');
-const totalCredits = document.getElementById('totalCredits');
+function renderCourses(filteredCourses) {
+  const container = document.getElementById("courseList");
+  container.innerHTML = "";
+  let totalCredits = 0;
 
-function displayCourses(filter) {
-  courseList.innerHTML = '';
-  let filtered = filter === 'all' ? courses : courses.filter(c => c.code.startsWith(filter.toUpperCase()));
-  let credits = 0;
-
-  filtered.forEach(c => {
-    const div = document.createElement('div');
-    div.className = `course-card${c.completed ? ' completed' : ''}`;
-    div.textContent = c.code;
-    courseList.appendChild(div);
-    credits += c.credits;
+  filteredCourses.forEach(course => {
+    const div = document.createElement("div");
+    div.textContent = course.code;
+    div.className = course.completed ? "completed" : "incomplete";
+    container.appendChild(div);
+    totalCredits += course.credits;
   });
 
-  totalCredits.textContent = credits;
+  document.getElementById("totalCredits").textContent = `The total credits for course listed above is ${totalCredits}`;
 }
 
-document.getElementById('all').addEventListener('click', () => displayCourses('all'));
-document.getElementById('cse').addEventListener('click', () => displayCourses('CSE'));
-document.getElementById('wdd').addEventListener('click', () => displayCourses('WDD'));
+function filterCourses(type) {
+  if (type === "all") {
+    renderCourses(courses);
+  } else {
+    renderCourses(courses.filter(c => c.code.startsWith(type)));
+  }
+}
 
-window.addEventListener('DOMContentLoaded', () => displayCourses('all'));
+document.addEventListener("DOMContentLoaded", () => {
+  renderCourses(courses);
+});
