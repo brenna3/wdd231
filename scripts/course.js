@@ -6,26 +6,31 @@ const courses = [
 ];
 
 function renderCourses(filteredCourses) {
-  const container = document.getElementById("courseList");
+  const container = document.getElementById("course-container");
   container.innerHTML = "";
   let totalCredits = 0;
 
   filteredCourses.forEach(course => {
     const div = document.createElement("div");
-    div.textContent = course.code;
-    div.className = course.completed ? "completed" : "incomplete";
+    div.className = "course-card" + (course.completed ? " completed" : "");
+    div.innerHTML = `
+      <h3>${course.code}</h3>
+      <p>${course.name}</p>
+      <p>${course.credits} credits</p>
+    `;
     container.appendChild(div);
     totalCredits += course.credits;
   });
 
-  document.getElementById("totalCredits").textContent = `The total credits for course listed above is ${totalCredits}`;
+  document.getElementById("total-credits").textContent = 
+    `The total credits for course listed above is ${totalCredits}`;
 }
 
 function filterCourses(type) {
   if (type === "all") {
     renderCourses(courses);
   } else {
-    renderCourses(courses.filter(c => c.code.startsWith(type)));
+    renderCourses(courses.filter(c => c.code.toUpperCase().startsWith(type.toUpperCase())));
   }
 }
 

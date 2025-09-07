@@ -1,0 +1,32 @@
+/* --- Main Grid Layout --- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card.full-width {
+  grid-column: 1 / -1;
+}
+
+#courseList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.course-card {
+  background-color: #eaf8ff;
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.course-card.completed {
+  background-color: var(--completed-bg);
+  border-color: var(--completed-border);
+}

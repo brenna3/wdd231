@@ -2,60 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WDD231 Home Page" />
-  <meta name="author" content="Your Name" />
-  <title>Home | WDD231</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/small.css">
-  <link rel="stylesheet" href="css/larger.css">
-  <script src="js/menu.js" defer></script>
-  <script src="js/date.js" defer></script>
-  <script src="js/courses.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WDD 231 - Course Home Page - Brenna Nery</title>
+  <link rel="stylesheet" href="styles/small.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="images/logo.svg" alt="Site Logo" />
-    <span>Site Name</span>
-    <button id="menuToggle" aria-label="Toggle Menu">☰</button>
-    <nav id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="#">Chamber Project</a>
-      <a href="#">Final Project</a>
-    </nav>
+    <div class="logo">
+      <img src="images/logo.svg" alt="Site Logo" />
+      <span class="site-name">Site Name</span>
+    </div>
+    <button id="menuToggle" aria-label="Toggle navigation"></button>
   </header>
+
+  <nav>
+    <ul id="navMenu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Chamber Project</a></li>
+      <li><a href="#">Final Project</a></li>
+    </ul>
+  </nav>
 
   <main>
     <h1>Home</h1>
 
-    <section>
+    <section class="card">
       <h2>About Me</h2>
-      <p>Lorem ipsum text describing you goes here...</p>
+      <p>Hi! My name is Brenna Nery. I am on year 5 of BYU... (your text)</p>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Student Photo</h2>
-      <img src="images/student.jpg" alt="Student Photo" />
+      <img src="images/profile.jpg" alt="Profile Picture" />
     </section>
 
-    <section class="courses">
+    <section class="card full-width">
       <h2>Web Certificate Courses</h2>
-      <div class="buttons">
+
+      <div class="filter-buttons">
         <button onclick="filterCourses('all')">All</button>
         <button onclick="filterCourses('CSE')">CSE</button>
         <button onclick="filterCourses('WDD')">WDD</button>
       </div>
+
       <div id="courseList"></div>
-      <p id="totalCredits">Total Credits: 0</p>
+      <p id="totalCredits"></p>
     </section>
   </main>
 
   <footer>
-    <div class="socials">
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    <div class="social-links">
+      <a href="https://linkedin.com">🔗</a>
+      <a href="#">🖥️</a>
+      <a href="#">❌</a>
     </div>
-    <p>&copy; <span id="year"></span> • Your Name • Utah, USA</p>
+    <p>&copy; <span id="year"></span> | Student Name | Utah, USA</p>
     <p id="lastModified"></p>
   </footer>
 </body>
