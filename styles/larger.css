@@ -1,32 +1,57 @@
-/* --- Main Grid Layout --- */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  padding: 1rem;
-}
+@media (min-width: 640px) {
 
-.card.full-width {
-  grid-column: 1 / -1;
-}
+  body {
+    padding: 2rem;
+  }
 
-#courseList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-}
+  header img {
+    height: 60px;
+  }
 
-.course-card {
-  background-color: #eaf8ff;
-  border: 1px solid var(--accent-color);
-  padding: 1rem;
-  border-radius: 5px;
-  text-align: center;
-}
+  /* MAIN - Grid layout for desktop */
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+  }
 
-.course-card.completed {
-  background-color: var(--completed-bg);
-  border-color: var(--completed-border);
+  main > h1 {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+    color: #335c67;
+  }
+
+  section.about-me {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  section.student-photo {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.web-courses {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  /* Filters - horizontal layout */
+  .filters {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .filters button {
+    flex: 1;
+    margin: 0 0.25rem;
+  }
+
+  #courseContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

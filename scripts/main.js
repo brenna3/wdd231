@@ -1,9 +1,18 @@
-// Toggle navigation menu
-document.getElementById('menuToggle').addEventListener('click', () => {
-  const menu = document.getElementById('navMenu');
-  menu.classList.toggle('open');
+
+const menu = document.querySelector("#menu").addEventListener("click", () => {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.style.display = "block";
 });
 
-// Set year and last modified
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = `Last Modification: ${document.lastModified}`;
+const hideMenu = document.querySelector(".close-menu").addEventListener("click", () => {
+    const navLinks = document.querySelector(".nav-links");
+    navLinks.style.display = "none";
+});
+
+
+const dateObject = new Date();
+const currentYear = document.querySelector("#currentYear").textContent += dateObject.getFullYear();
+
+
+document.querySelector("#lastModified").textContent = 
+    `Last Modified ${new Date(document.lastModified).toLocaleDateString()}`
