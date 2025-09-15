@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-  --primary-color: #b36b5e;       /* Reddish-brown from example */
+  --primary-color: #b36b5e;       
   --link-color: #1a73e8;
   --link-hover-color: #0b54b5;
   --text-color: #333333;
@@ -24,50 +24,10 @@ body {
   line-height: 1.5;
 }
 
-/* Header */
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem 2rem;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  font-family: var(--font-family-serif);
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0 0;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav a {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-nav a[aria-current="page"] {
-  border-bottom: 2px solid #f39c12;
-  padding-bottom: 2px;
-}
-
 /* View Toggle Buttons */
 .view-toggle {
   margin: 1.5rem 2rem;
   text-align: center;
-}
-
-.view-toggle h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
-  font-family: var(--font-family-serif);
 }
 
 .view-toggle button {
@@ -88,13 +48,17 @@ nav a[aria-current="page"] {
   outline: none;
 }
 
+.view-toggle button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 /* Members Section */
 #members.grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   padding: 2rem;
-  margin: 0;
 }
 
 #members.list-view {
@@ -128,7 +92,7 @@ nav a[aria-current="page"] {
   max-height: 130px;
   margin-bottom: 1rem;
   object-fit: contain;
-  background-color: #f0f0f0; /* fallback if image fails */
+  background-color: #f0f0f0;
 }
 
 .member-card h3 {
@@ -175,17 +139,8 @@ footer p {
   margin: 0.3rem 0;
 }
 
-/* Responsive Typography */
+/* Responsive */
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
   .view-toggle {
     margin: 1rem;
   }
