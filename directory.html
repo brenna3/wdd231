@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tri-Cities Chamber of Commerce Directory</title>
+  <meta name="description" content="Directory page for The Tri-Cities Chamber Of Commerce" />
+  <meta name="author" content="Brenna Nery" />
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  
+
+  <meta property="og:title" content="Tri-Cities Chamber of Commerce Directory" />
+  <meta property="og:description" content="Find local businesses in Tri-Cities" />
+  <meta property="og:image" content="images/og-image.jpg" />
+  <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html" />
+  
+
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/members.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/data/members.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Your City Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="directory.html" aria-current="page">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view-toggle">
+      <button id="gridViewBtn">Grid View</button>
+      <button id="listViewBtn">List View</button>
+    </section>
+    <section id="members" class="grid-view">
+
+      <!-- Members will be loaded here by JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: brenna.nery3@gmail.com | Brenna Nery | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="copyrightYear"></span></p>
+  </footer>
+
+
+</body>
+</html>
