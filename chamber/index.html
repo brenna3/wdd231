@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tri-Citiees Chamber Of Commerce-Home</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Tri-Cities Chamber Of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="images/tri-cities.jpg" alt="Tri-Cities city skyline" />
+      <div class="cta">
+        <a href="join.html" class="btn">Join the Chamber</a>
+      </div>
+    </section>
+
+    <section class="events">
+      <h2>Current Events</h2>
+      <ul>
+        <li>Annual Business Expo - Sept 25</li>
+        <li>Networking Breakfast - Oct 3</li>
+        <li>Small Business Workshop - Oct 15</li>
+      </ul>
+    </section>
+
+    <section class="weather">
+      <h2>Tri-Cities Weather</h2>
+      <div id="weather-current"></div>
+      <div id="weather-forecast"></div>
+    </section>
+
+    <section class="spotlights">
+      <h2>Member Spotlights</h2>
+      <div id="spotlight-cards" class="spotlight-cards"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tri-Citiees Chamber Of Commercee</p>
+  </footer>
+
+  <script src="scripts/weathers.js"></script>
+  <script src="scripts/spotlight.js"></script>
+</body>
+</html>

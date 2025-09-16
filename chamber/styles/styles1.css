@@ -1,0 +1,87 @@
+/* General */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header, footer {
+  background-color: #003366;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav a[aria-current="page"] {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cta {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn {
+  background-color: #f90;
+  color: #003366;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Sections */
+main section {
+  padding: 1rem 2rem;
+}
+
+/* Spotlights */
+.spotlight-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.spotlight-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 0 5px #aaa;
+  border-radius: 5px;
+  text-align: center;
+}
+.spotlight-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .spotlight-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
