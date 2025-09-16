@@ -1,5 +1,5 @@
-const apiKey = 'YOUR_API_KEY';
-const city = 'San Miguel';
+const apiKey = '8aa4ed6ea8ff70e6c20d2752aaf4a3f8';
+const city = 'Richland, WA';
 const units = 'imperial'; // Fahrenheit
 
 const weatherCurrentEl = document.getElementById('weather-current');
