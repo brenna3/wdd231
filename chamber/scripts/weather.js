@@ -1,4 +1,4 @@
-const apiKey = '8aa4ed6ea8ff70e6c20d2752aaf4a3f8';
+const apiKey = 'Test_Key';
 const city = 'Richland';
 const units = 'imperial'; // Fahrenheit
 
