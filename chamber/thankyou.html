@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <title>Thank You – Tri-Cities Chamber of Commerce</title>
+  <meta name="description" content="Thank you page for chamber membership application." >
+  <meta name="author" content="Brenna Nery" >
+  
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" >
+  <link rel="stylesheet" href="styles/styles.css" >
+</head>
+<body>
+
+  <header>
+    <h1>Tri-Cities Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Thank You for your application!</h2>
+      <p>We appreciate your interest in becoming a member of the Tri-Cities Chamber of Commerce. Here is the information you submitted:</p>
+
+      <dl id="submittedData" aria-live="polite">
+      </dl>
+
+      <p><a href="index.html">Return to Home</a> | <a href="join.html">Submit Another Application</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: <strong>brenna.nergy3@gmail.com</strong> | Brenna Nery | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; <span id="copyrightYear"></span></p>
+  </footer>
+
+  <script>
+    
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        firstName: params.get('firstName') || 'N/A',
+        lastName: params.get('lastName') || 'N/A',
+        email: params.get('email') || 'N/A',
+        mobile: params.get('mobile') || 'N/A',
+        business: params.get('business') || 'N/A',
+        timestamp: params.get('timestamp') || 'N/A'
+      };
+    }
+
+    
+    function displayFormData() {
+      const data = getQueryParams();
+      const container = document.getElementById('submittedData');
+
+      container.innerHTML = `
+        <dt>First Name:</dt><dd>${data.firstName}</dd>
+        <dt>Last Name:</dt><dd>${data.lastName}</dd>
+        <dt>Email Address:</dt><dd>${data.email}</dd>
+        <dt>Mobile Number:</dt><dd>${data.mobile}</dd>
+        <dt>Business/Organization Name:</dt><dd>${data.business}</dd>
+        <dt>Submission Date & Time:</dt><dd>${new Date(data.timestamp).toLocaleString() || data.timestamp}</dd>
+      `;
+    }
+
+    
+    document.getElementById('lastModified').textContent = document.lastModified;
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+   
+    window.onload = displayFormData;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the Chamber - Tri-Cities Chamber</title>
+  <meta name="description" content="Join the Tri-Cities Chamber of Commerce">
+  <meta name="author" content="Brenna Nery">
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <header>
+    <h1>Tri-Cities Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" class="active">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="join-page">
+
+    <section class="form-container">
+      <h2>Become a Member</h2>
+
+      <form method="get" action="thankyou.html">
+        <label title="Enter your first name">First Name:
+          <input type="text" name="firstName" required autocomplete="given-name" title="First Name">
+        </label>
+
+        <label title="Enter your last name">Last Name:
+          <input type="text" name="lastName" required autocomplete="family-name" title="Last Name">
+        </label>
+
+        <label title="Enter your title within your organization">Organizational Title:
+          <input type="text" name="orgTitle" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" title="Alphabetic characters, hyphens, and spaces only. Min 7 characters.">
+        </label>
+
+        <label title="Enter your email address">Email:
+          <input type="email" name="email" required autocomplete="email" placeholder="example@email.com" title="Email Address">
+        </label>
+
+        <label title="Enter your mobile phone number">Mobile Number:
+          <input type="tel" name="mobile" required autocomplete="tel" title="Mobile Phone Number">
+        </label>
+
+        <label title="Enter your business or organization name">Business/Organization Name:
+          <input type="text" name="business" required autocomplete="organization" title="Organization Name">
+        </label>
+
+        <label title="Select a membership level">Membership Level:
+          <select name="membership" required title="Membership Level">
+            <option value="">--Please Select--</option>
+            <option value="NP">NP Membership (Free for non-profits)</option>
+            <option value="Bronze">Bronze Membership</option>
+            <option value="Silver">Silver Membership</option>
+            <option value="Gold">Gold Membership</option>
+          </select>
+        </label>
+
+        <label title="Briefly describe your business or organization">Business Description:
+          <textarea name="description" rows="5" title="Business Description"></textarea>
+        </label>
+
+        <input type="hidden" name="timestamp" id="timestamp">
+
+        <input type="submit" value="Submit Application">
+      </form>
+    </section>
+
+    <section class="membership-info">
+      <h2>Membership Levels</h2>
+      <div class="membership-cards">
+
+        <div class="membership-card" id="card-np">
+          <h3>NP Membership</h3>
+          <p>Free for non-profit organizations.</p>
+          <a href="#" data-modal="modal-np">See Benefits</a>
+        </div>
+
+        <div class="membership-card" id="card-bronze">
+          <h3>Bronze Membership</h3>
+          <p>Entry-level membership with basic benefits.</p>
+          <a href="#" data-modal="modal-bronze">See Benefits</a>
+        </div>
+
+        <div class="membership-card" id="card-silver">
+          <h3>Silver Membership</h3>
+          <p>Includes more visibility and networking perks.</p>
+          <a href="#" data-modal="modal-silver">See Benefits</a>
+        </div>
+
+        <div class="membership-card" id="card-gold">
+          <h3>Gold Membership</h3>
+          <p>Premium membership with maximum exposure.</p>
+          <a href="#" data-modal="modal-gold">See Benefits</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <!-- Membership Modals -->
+  <div class="modal" id="modal-np">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>NP Membership Benefits</h3>
+      <ul>
+        <li>Free Directory Listing</li>
+        <li>Community Event Access</li>
+        <li>Monthly Newsletters</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-bronze">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Bronze Membership Benefits</h3>
+      <ul>
+        <li>Directory Listing</li>
+        <li>Member Badge</li>
+        <li>Event Invitations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-silver">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Silver Membership Benefits</h3>
+      <ul>
+        <li>Priority Directory Listing</li>
+        <li>Training Access</li>
+        <li>Ad Placement</li>
+        <li>Social Media Mentions</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-gold">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Gold Membership Benefits</h3>
+      <ul>
+        <li>Spotlight on Homepage</li>
+        <li>Sponsorship Opportunities</li>
+        <li>Event Discounts</li>
+        <li>Premium Ad Space</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Fill timestamp
+    document.getElementById("timestamp").value = new Date().toISOString();
+
+    // Modal logic
+    document.querySelectorAll("[data-modal]").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const modalId = link.getAttribute("data-modal");
+        document.getElementById(modalId).style.display = "block";
+      });
+    });
+
+    document.querySelectorAll(".modal .close").forEach(btn => {
+      btn.addEventListener("click", () => {
+        btn.closest(".modal").style.display = "none";
+      });
+    });
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains("modal")) {
+        event.target.style.display = "none";
+      }
+    };
+
+    // Footer Dates
+    document.getElementById("lastModified").textContent = document.lastModified;
+    document.getElementById("copyrightYear").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
+ <footer>
+    <p>&copy; <span id="copyrightYear"></span> Tri-Cities Chamber | Brenna Nery | WDD 231</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
