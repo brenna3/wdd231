@@ -20,3 +20,31 @@ fetch("data/discover.json")
       discoverGrid.appendChild(card);
     });
   });
+  // Visitor Message Setup
+const visitMessage = document.getElementById("visit-message");
+
+// Get current time
+const now = Date.now();
+
+// Get last visit from localStorage
+const lastVisit = localStorage.getItem("lastVisit");
+
+if (!lastVisit) {
+  // First visit
+  visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+} else {
+  const msInDay = 1000 * 60 * 60 * 24;
+  const daysBetween = Math.floor((now - lastVisit) / msInDay);
+
+  if (daysBetween < 1) {
+    visitMessage.textContent = "Back so soon! Awesome!";
+  } else if (daysBetween === 1) {
+    visitMessage.textContent = "You last visited 1 day ago.";
+  } else {
+    visitMessage.textContent = `You last visited ${daysBetween} days ago.`;
+  }
+}
+
+// Update the last visit time
+localStorage.setItem("lastVisit", now);
+
