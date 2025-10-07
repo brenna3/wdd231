@@ -430,3 +430,57 @@ form input[type="submit"]:focus {
     grid-template-columns: 1fr; /* 1 column on phones */
   }
 }
+@media (min-width: 641px) {
+  .discover-card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+/* Desktop: 4x2 layout with named areas */
+@media (min-width: 1025px) {
+  #discover-grid {
+    display: grid;
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Medium: 2x4 layout */
+@media (min-width: 641px) and (max-width: 1024px) {
+  #discover-grid {
+    display: grid;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+/* Mobile: 1 column layout */
+@media (max-width: 640px) {
+  #discover-grid {
+    display: grid;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8";
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+}
