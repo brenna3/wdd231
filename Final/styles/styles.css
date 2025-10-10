@@ -240,3 +240,13 @@ img {
   font-size: 0.95rem;
   line-height: 1.4;
 }
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: white;
+}
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
