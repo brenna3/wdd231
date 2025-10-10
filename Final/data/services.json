@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Mindful Meditation",
+    "description": "Learn to relax and breathe with guided sessions.",
+    "category": "Mental Wellness",
+    "details": "Includes breathing exercises and guided audio sessions.",
+    "duration": "30 mins"
+  },
+  {
+    "id": 2,
+    "name": "Eco Nutrition Plan",
+    "description": "Eat healthy with sustainable meal plans.",
+    "category": "Nutrition",
+    "details": "Weekly meal guides using local organic ingredients.",
+    "duration": "7-day plan"
+  },
+  {
+    "id": 3,
+    "name": "Virtual Wellness Coaching",
+    "description": "One-on-one coaching to improve your well-being.",
+    "category": "Personal Coaching",
+    "details": "Includes goal setting, habit tracking, and personal check-ins.",
+    "duration": "1 hour"
+  }
+]

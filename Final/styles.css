@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4fdf7;
+  color: #2e3d30;
+}
+
+header {
+  background: #2e8b57;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar.active .nav-links {
+  display: block;
+}
+
+.hero {
+  padding: 2rem;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    gap: 1rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

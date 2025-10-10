@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Green Wellness to start your wellness journey today." />
+  <meta name="author" content="Your Name" />
+  <title>Green Wellness | Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Green Wellness</div>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+    </section>
+
+    <section class="contact-form">
+      <form action="form-action.html" method="get">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="service">Service Interested In:</label>
+        <select id="service" name="service" required>
+          <option value="">--Please choose an option--</option>
+          <option value="meditation">Mindful Meditation</option>
+          <option value="nutrition">Eco Nutrition Plan</option>
+          <option value="coaching">Wellness Coaching</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Green Wellness | <a href="attributions.html">Attributions</a></p>
+    <a href="https://your-video-link.com" target="_blank">Final Project Video</a>
+  </footer>
+</body>
+</html>
