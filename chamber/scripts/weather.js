@@ -1,47 +1,44 @@
-const apiKey = 'Test_Key';
-const city = 'Richland';
-const units = 'imperial'; // Fahrenheit
+const apiKey = "YOUR_API_KEY";
+const city = "Kennewick"; // or Richland/Pasco/Tri-Cities
 
-const weatherCurrentEl = document.getElementById('weather-current');
-const weatherForecastEl = document.getElementById('weather-forecast');
+const currentWeatherEl = document.getElementById("weather-current");
+const forecastEl = document.getElementById("weather-forecast");
 
-async function getWeather() {
-  try {
-    // Current weather
-    const currentResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`
-    );
-    const currentData = await currentResponse.json();
+const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
-    // Display current weather
-    weatherCurrentEl.innerHTML = `
-      <p>Temperature: ${Math.round(currentData.main.temp)}°F</p>
-      <p>Conditions: ${currentData.weather[0].description}</p>
+// Current Weather
+fetch(weatherURL)
+  .then(response => response.json())
+  .then(data => {
+    currentWeatherEl.innerHTML = `
+      <p>Temperature: ${Math.round(data.main.temp)}°F</p>
+      <p>${data.weather[0].description}</p>
     `;
+  });
 
-    // 3-day forecast (using one call API)
-    const forecastResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`
-    );
-    const forecastData = await forecastResponse.json();
+// 3-Day Forecast
+fetch(forecastURL)
+  .then(response => response.json())
+  .then(data => {
+    const forecastDays = [];
+    for (let i = 0; i < data.list.length; i++) {
+      const forecastTime = data.list[i];
+      if (forecastTime.dt_txt.includes("12:00:00")) {
+        forecastDays.push(forecastTime);
+      }
+      if (forecastDays.length === 3) break;
+    }
 
-    // Filter forecast for approx. midday next 3 days
-    const forecastList = forecastData.list.filter((item) =>
-      item.dt_txt.includes('12:00:00')
-    ).slice(0, 3);
-
-    let forecastHTML = '<h3>3-Day Forecast</h3><ul>';
-    forecastList.forEach(day => {
-      const date = new Date(day.dt * 1000).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
-      forecastHTML += `<li>${date}: ${Math.round(day.main.temp)}°F, ${day.weather[0].description}</li>`;
+    forecastDays.forEach(day => {
+      const date = new Date(day.dt_txt);
+      const weekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+      forecastEl.innerHTML += `
+        <div class="forecast-day">
+          <h4>${weekday}</h4>
+          <p>${Math.round(day.main.temp)}°F</p>
+          <p>${day.weather[0].description}</p>
+        </div>
+      `;
     });
-    forecastHTML += '</ul>';
-
-    weatherForecastEl.innerHTML = forecastHTML;
-  } catch (error) {
-    weatherCurrentEl.textContent = 'Failed to load weather data.';
-    console.error(error);
-  }
-}
-
-getWeather();
+  });
