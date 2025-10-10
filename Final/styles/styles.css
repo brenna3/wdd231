@@ -189,3 +189,54 @@ img {
   margin-top: 0.5rem;
   font-weight: bold;
 }
+.gallery {
+  background-color: #f4fdf7;
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-family: 'Playfair Display', serif;
+  color: #2e8b57;
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.gallery-item {
+  max-width: 300px;
+  flex: 1 1 30%;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.gallery-item h3 {
+  color: #2e3d30;
+  margin: 1rem 0 0.5rem;
+}
+
+.gallery-item p {
+  color: #4d4d4d;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
